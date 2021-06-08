@@ -15,14 +15,14 @@ local box = {
 
 RegisterCommand("cam",
 	function ()
-        cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
-		SetCamActive(cam, true)
-        RenderScriptCams(true, true, 500, true, true)
+		cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
+			SetCamActive(cam, true)
+		RenderScriptCams(true, true, 500, true, true)
 
-        pos = GetEntityCoords(PlayerPedId())
-        camPos = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 2.0, 0.0)
-        SetCamCoord(cam, camPos.x, camPos.y, camPos.z+0.75)
-        PointCamAtCoord(cam, pos.x, pos.y + 0.5, pos.z+0.15)
+		pos = GetEntityCoords(PlayerPedId())
+		camPos = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 2.0, 0.0)
+		SetCamCoord(cam, camPos.x, camPos.y, camPos.z+0.75)
+		PointCamAtCoord(cam, pos.x, pos.y + 0.5, pos.z+0.15)
 	end
 )
 Citizen.CreateThread(function ()
